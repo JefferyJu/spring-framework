@@ -15,11 +15,9 @@ public class HelloSpring {
 
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
-		Object example1 = ac.getBean(Example1.class);
-		System.out.println(example1);
+		Example1 example1 = ac.getBean(Example1.class);
+		example1.test();
 	}
-
-
 
 
 }

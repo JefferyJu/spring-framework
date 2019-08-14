@@ -14,4 +14,8 @@ public class Example1 {
 	public Example1() {
 		System.out.println("example1");
 	}
+
+	public void test() {
+		System.out.println("进行考试...");
+	}
 }

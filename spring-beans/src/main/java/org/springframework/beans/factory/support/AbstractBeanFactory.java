@@ -320,6 +320,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 				// 实例化依赖的bean后便可以实例化mbd本身了
 				// singleton模式的创建
 				if (mbd.isSingleton()) {
+					// 创建出对象
 					sharedInstance = getSingleton(beanName, () -> {
 						try {
 							return createBean(beanName, mbd, args);
