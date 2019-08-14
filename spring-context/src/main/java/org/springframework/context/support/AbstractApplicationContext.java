@@ -505,7 +505,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 				postProcessBeanFactory(beanFactory);
 
 				// Invoke factory processors registered as beans in the context.
-				// 在上下文中调用注册为bean的工厂处理器。
+				// 在上下文中调用注册为bean的工厂处理器.
 				invokeBeanFactoryPostProcessors(beanFactory);
 
 				// Register bean processors that intercept bean creation.
@@ -861,6 +861,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 		beanFactory.freezeConfiguration();
 
 		// Instantiate all remaining (non-lazy-init) singletons.
+		// 实例化所有剩余（非延迟初始化）单例。
 		// 入
 		beanFactory.preInstantiateSingletons();
 	}
