@@ -11,7 +11,11 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * @date 2019/8/13 9:23
  */
 @Configuration
-@ComponentScan("com.jujianfei.spring")
-@EnableAspectJAutoProxy
+@ComponentScan("com.jujianfei.spring.*")
+//默认false:
+//   - 实现了接口: 使用JDK代理
+//   - 没有实现接口: 使用cglib动态代理
+//true: 强制使用cglib动态代理
+@EnableAspectJAutoProxy(proxyTargetClass = false)
 public class AppConfig {
 }

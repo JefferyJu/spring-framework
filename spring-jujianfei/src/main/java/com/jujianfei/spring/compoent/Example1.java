@@ -9,12 +9,13 @@ import org.springframework.stereotype.Component;
  * @date 2019/8/13 9:13
  */
 @Component
-public class Example1 {
+public class Example1 implements Example1Interface {
 
 	public Example1() {
 		System.out.println("example1");
 	}
 
+	@Override
 	public void test() {
 		System.out.println("进行考试...");
 	}
