@@ -1,8 +1,7 @@
 package com.jujianfei.spring.aspect;
 
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 /**
@@ -19,7 +18,26 @@ public class JuJianfeiAspect {
 	private void pointcut() {}
 
 	@Before("pointcut()")
-	public void doAccessCheck() {
-		System.out.println("考前检查...");
+	public void enteringTheExaminationRoom() {
+		System.out.println("下发试卷...");
+	}
+
+
+	@After("pointcut()")
+	public void leavingTheExaminationRoom() {
+		System.out.println("离开考场...");
+	}
+
+	@Around("pointcut()")
+	public Object aroundTest(ProceedingJoinPoint pjp) {
+		System.out.println("进入考场...");
+		Object o = null;
+		try {
+			o = pjp.proceed();
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		System.out.println("做完检查...");
+		return o;
 	}
 }
